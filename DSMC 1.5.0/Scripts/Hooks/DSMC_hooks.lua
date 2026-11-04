@@ -33,10 +33,10 @@ package.path =
 
 DSMC_ModuleName  			= "HOOKS"
 DSMC_MainVersion 			= "1"
-DSMC_SubVersion 			= "4"
-DSMC_SubSubVersion 			= "4"
-DSMC_Build 					= "3394"
-DSMC_Date					= "2026/02/08"
+DSMC_SubVersion 			= "5"
+DSMC_SubSubVersion 			= "0"
+DSMC_Build 					= "3399"
+DSMC_Date					= "2026/11/04"
 
 -- ## DEBUG TO TEXT FUNCTION DO NOT TOUCH THIS
 local forceServerMode 		= false
@@ -758,6 +758,9 @@ local function startDSMCprocess()
 		-- assign auto save frequency in minutes
 		if ATRL_var then
 			autosavefrequency = tonumber(ATRL_time_var) * 60
+		else
+			ATRL_var = true
+			autosavefrequency = 24*3600+1
 		end
 		
 		-- check STOP_var
@@ -1395,6 +1398,7 @@ function DSMC.onSimulationStop()
 
 		writeDebugBase(DSMC_ModuleName .. ": starting DSMC.onSimulationStop() call..")
 		if ATRL_var then
+			writeDebugBase(DSMC_ModuleName .. ": ATRL_var true")
 			batchSaveProcess()
 			writeDebugBase(DSMC_ModuleName .. ": DSMC.onSimulationStop() autosave file built process done - check if ok!")
 		end

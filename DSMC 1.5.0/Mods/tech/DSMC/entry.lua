@@ -9,7 +9,7 @@ developerName   =   "Chromium & many DCS modder",
 installed 	 = true, -- if false that will be place holder , or advertising
 dirName	  	 = current_mod_path,
 fileMenuName = _("DSMC"),
-version		 = "1.4.3",
+version		 = "1.5.0",
 state		 = "installed",
 info		 = _("DSMC add extra capability to the scenery simulation being able to save a scenery state"),
 
